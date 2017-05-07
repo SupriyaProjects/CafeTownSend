@@ -16,10 +16,6 @@ public class PageUtils extends FluentPage{
         await().atMost(10, TimeUnit.SECONDS).until(element).displayed();
     }
 
-    public void waitForPageToLoad() {
-        await().atMost(10, TimeUnit.SECONDS).untilPage().isLoaded();
-    }
-
     public void waitForElementWithTextNoVisible(String text, String element) {
         await().atMost(20, TimeUnit.SECONDS).until($(element, withText().contains(text))).present();
     }

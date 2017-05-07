@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
  */
 public class DriverFactory {
 
-    protected static WebDriver driver;
+    protected WebDriver driver;
 
     public DriverFactory() {
         initialize();

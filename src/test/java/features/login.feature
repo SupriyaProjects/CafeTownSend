@@ -1,16 +1,11 @@
 Feature:
     As a owner
-    I want to be able to manage my employees in the system
+    I want to be able to login in the system to manage my employees
 
-Scenario: Sign up a new employee
+Scenario: Login as a valid user
     Given the owner is on the Login Page
-    And the owner is logged in
-    When the owner enters all the employee details as follows:
-      |firstname | lastname | doj        | email       |
-      |supriya   | nyayapati| 2017-05-22 | sup@sup.com |
-    Then the saved employee "supriya nyayapati" should be listed
-    When the owner deletes the employee "supriya nyayapati"
-    Then the employee record should be deleted
+    When the owner enters his details
+    Then he should be logged in
 
   @test
   Scenario: Edit the existing employee

@@ -4,6 +4,7 @@ import cucumber.api.DataTable;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.fluentlenium.adapter.cucumber.FluentCucumberTest;
@@ -56,6 +57,12 @@ public class EmployeeSteps extends FluentCucumberTest{
     @Then("^the employee record should be deleted$")
     public void the_employee_record_should_be_deleted() {
         employeePage.verifyEmployeeIsDeleted(employeeName);
+    }
+
+    @And("^the owner edits the employee details as follows:$")
+    public void the_owner_edits_the_employee_details_as_follows(DataTable employeeDetails) {
+        List<List<String>> data = employeeDetails.raw();
+        employeePage.editEmployee(data);
     }
 }
 

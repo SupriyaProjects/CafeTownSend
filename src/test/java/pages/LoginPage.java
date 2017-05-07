@@ -40,4 +40,8 @@ public class LoginPage extends PageUtils {
         loginButton.click();
         waitForElementVisible(greetings);
     }
+
+    public static void verifyOwnerIsLoggedIn()  {
+
+    }
 }

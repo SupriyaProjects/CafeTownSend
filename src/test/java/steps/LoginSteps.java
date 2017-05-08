@@ -56,9 +56,24 @@ public class LoginSteps extends FluentCucumberTest {
         loginPage.owner_logs_in_to_cafe_townsend();
     }
 
-    @Then("^he should be logged in$")
-    public void he_should_be_logged_in() {
-        LoginPage.verifyOwnerIsLoggedIn();
+    @Then("^greeting should have username \"(.*?)\"$")
+    public void he_should_be_logged_in(String username) {
+        loginPage.verifyOwnerIsLoggedIn(username);
+    }
+    @When("^the owner enters his details \"(.*?)\" and \"(.*?)\"$")
+    public void the_owner_enters_his_details(String username, String password) {
+        loginPage.owner_enter_incorrect_username_password(username, password);
+    }
+
+    @Then("^system should throw an error message.$")
+    public void system_should_throw_an_error_message()  {
+        loginPage.invalid_error_message();
+    }
+
+    @Then("^system should validate the message$")
+    public void system_should_validate_the_message()  {
+        loginPage.validate_the_message();
     }
 }
+
 

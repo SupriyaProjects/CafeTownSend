@@ -25,3 +25,8 @@ Scenario: Sign up a new employee
     Then the saved employee "neha pawar" should be listed
     When the owner deletes the employee "neha pawar"
     Then the employee record should be deleted
+
+
+  Scenario: Edit the existing employee
+    Given the owner is on the Login Page
+    And the owner is logged in

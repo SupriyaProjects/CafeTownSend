@@ -10,18 +10,21 @@ import static org.fluentlenium.assertj.FluentLeniumAssertions.*;
 /**
  * Created by Supriya Pawar on 7/05/2017.
  */
+
 public class LoginPage extends PageUtils {
 
     private String townsendurl = Configuration.cafetownsendbaseurl;
 
     @FindBy(css = "input[type=\"text\"]")
-    private FluentWebElement username;
+    private FluentWebElement usernameElement;
     @FindBy(css = "input[type=\"password\"]")
-    private FluentWebElement password;
+    private FluentWebElement passwordElement;
     @FindBy(css = "button[type=\"submit\"]")
     private FluentWebElement loginButton;
     @FindBy(css = "#greetings")
     private FluentWebElement greetings;
+    @FindBy(css="p.error-message.ng-binding")
+    private FluentWebElement errorMessage;
 
     @Override
     public String getUrl() {
@@ -34,14 +37,35 @@ public class LoginPage extends PageUtils {
     }
 
     public void owner_logs_in_to_cafe_townsend() {
-        waitForElementVisible(username);
-        username.fill().with("Luke");
-        password.fill().with("Skywalker");
+        waitForElementVisible(usernameElement);
+        usernameElement.fill().with("Luke");
+        passwordElement.fill().with("Skywalker");
         loginButton.click();
         waitForElementVisible(greetings);
     }
 
-    public static void verifyOwnerIsLoggedIn()  {
+    public void owner_enter_incorrect_username_password(String username, String password) {
+        waitForElementVisible(usernameElement);
+        usernameElement.fill().with(username);
+        passwordElement.fill().with(password);
+        loginButton.click();
+    }
 
+    public void invalid_error_message()
+    {
+        waitForElementVisible(errorMessage);
+        assertThat(errorMessage.text()).isEqualTo("Invalid username or password!");
+    }
+
+    public void validate_the_message()
+    {
+        waitForElementVisible(errorMessage);
+        assertThat(errorMessage.text()).isEqualTo("Invalid username or password!");
+    }
+
+    public void verifyOwnerIsLoggedIn(String username)
+    {
+        waitForElementVisible(greetings);
+        assertThat(greetings.text()).isEqualTo("Hello "+username);
     }
 }

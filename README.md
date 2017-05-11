@@ -19,6 +19,7 @@ Please ensure you have the prerequisites installed for the tests to run
 
 In order to run the tests, you need to go to the root directory under CafeTownSend and execute the below command
 
+* mvn clean
 * mvn test
 
 ### Future state

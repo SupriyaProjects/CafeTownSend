@@ -12,7 +12,6 @@ Scenario: Sign up a new employee
     When the owner deletes the employee "supriya nyayapati"
     Then the employee record should be deleted
 
-  @test
   Scenario: Edit the existing employee
     Given the owner is on the Login Page
     And the owner is logged in

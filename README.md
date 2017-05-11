@@ -8,34 +8,22 @@ Please ensure you have the prerequisites installed for the tests to run
 
 ### Prerequisites
 
-The tests can be run only on a Mac OSX operating system
-You will need the chrome browser installed at the default path i.e. /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
-You will need the latest version of java JDK installed "1.8.0_131"
-You will need to have apache maven added to your PATH
-export PATH=/path to apache/apache-maven-3.5.0/bin:$PATH
-The Chrome Driver is included in the code, so you won't need to download that separately
+-The tests can be run only on a Mac OSX operating system
+-You will need the chrome browser installed at the default path i.e. /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+-You will need the latest version of java JDK installed "1.8.0_131"
+-You will need to have apache maven added to your PATH
+-export PATH=/path to apache/apache-maven-3.5.0/bin:$PATH
+-The Chrome Driver is included in the code, so you won't need to download that separately
 
 ## Running the tests
 
 In order to run the tests, you need to go to the root directory under CafeTownSend and execute the below command
 
-mvn test
+* mvn test
 
-### Break down into end to end tests
+### Future state
 
-The tests are broken down into Smoke, Validation and End to End tests
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+The tests need to be categorized into Smoke, Regression and Validation.
 
 ## Built Using
 

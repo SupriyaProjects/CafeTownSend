@@ -43,6 +43,19 @@
             <version>3.2.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.perfecto.reporting-sdk</groupId>
+            <artifactId>reportium-java</artifactId>
+            <version>2.2.8</version>
+        </dependency>
+
     </dependencies>
+    <repositories>
+        <repository>
+            <id>mavenCentral</id>
+            <name>maven</name>
+            <url>https://repo1.perfectomobile.com/public/repositories/maven</url>
+        </repository>
+    </repositories>
 
 </project>
